@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: transparent;
+}
+
+
+.tablet {
+  width: 80%;
+	height: 80%;
+  min-height: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: rgb(19, 19, 19) solid 3vh;
+  border-radius: 15px;
+  background-image: linear-gradient(to right, rgb(0, 18, 39), rgb(0, 39, 65));
+}
+
+.Loading {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Login {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 25%;
+  color: white;
+  font-family: 'Secular One', sans-serif;
+  text-align: center;
+}
+
+.Login img {
+  width: 100%;
+}
+
+.Login button {
+  width: 60%;
+  color: black;
+  border-radius: 5px;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background-color: blanchedalmond;
+}
+
+.MainPage {
+  display: none;
+  font-family: 'Secular One', sans-serif;
+  height: 100%;
+}
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: auto;
+  color: blanchedalmond;
+  padding: 10px;
+  background-image: linear-gradient(to right, rgb(0, 39, 65), rgb(0, 23, 49));
+  height: 86px;
+}
+
+.Header img {
+  width: 7%;
+}
+
+.ExitButton {
+  padding: 10px;
+  width: 80px;
+  background: none;
+  border-color: blanchedalmond;
+  border-radius: 10px;
+  font-size: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.322);
+  transition: 500ms;
+}
+
+.ExitButton:hover {
+  background: blanchedalmond;
+  color: black;
+  transition: 500ms;
+}
+
+.MainPageTabs {
+  float: left;
+  width: 24%;
+  height: auto;
+  background-color: rgb(0, 16, 36);
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  position: absolute;
+  top: 86px;
+  bottom: 0;
+}
+
+.MainPageUserInfo {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+}
+
+.MainPageUserInfo span {
+  color: rgb(0, 189, 0);
+  font-size: 20px;
+  text-shadow: 0px 0px 5px rgb(0, 189, 0);
+  position: relative;
+  bottom: 5px;
+}
+
+.MainPageUserInfo p {
+  margin-left: 5px;
+  font-size: 2.4vw;
+}
+
+.MainPageTabButtons {
+  margin-top: 10px;
+}
+
+.MainPageTabButton {
+  width: 80%;
+  background: none;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+  padding: 15px;
+  font-size: 1.5vw;
+  color: white;
+  text-align: left;
+  transition: 250ms;
+}
+
+.MainPageTabActiveButton {
+  width: 95%;
+  transition: 250ms;
+  background-color: rgb(0, 39, 65);
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.MainPageTabContent {
+  float: right;
+  width: 76%;
+  height: auto;
+  overflow-y: auto;
+  padding: 15px;
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 86px;
+  bottom: 0;
+}
+
+.MainPageTabContent::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 5px;
+}
+
+.MainPageTabContent::-webkit-scrollbar-track {
+  background: rgb(0, 39, 65); 
+}
+
+.MainPageTabContent::-webkit-scrollbar-thumb {
+  background: rgb(0, 69, 116); 
+}
+
+
+.Main_Panel_Page_WantedPeople {
+  float: left;
+  width: 50%;
+  font-size: 1.5vw;
+}
+
+.Main_Panel_Page_WnatedCars {
+  float: right;
+  width: 50%;
+  font-size: 1.5vw;
+}
+
+.Main_Panel_Page_List {
+  width: 80%;
+  min-height: 30px;
+  margin-right: 25px;
+  background-color: rgb(0, 53, 88);
+  border-radius: 6px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.MainPage_Header {
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.MainPage_Header input {
+  padding: 5px;
+  width: 30%;
+  background: none;
+  border-color: blanchedalmond;
+  font-size: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.322);
+}
+
+#Page_CitizensDetailInfo {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.Character_Info {
+  position: relative;
+  top: 50px;
+  height: 20%;
+}
+
+.Profile_Picture {
+  float: left;
+  width: 35%;
+}
+
+.Profile_Picture img {
+  border-radius: 100%;
+}
+
+.Profile_Picture .Change_Profile_Button {
+  position:absolute;
+  bottom: 42%;
+  left: 10%;
+  opacity:0;
+  transition: opacity 0.3s linear;
+  -moz-transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.3s linear;
+  background-color: blanchedalmond;
+  color: black;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1.5vw;
+}
+
+.Profile_Picture:hover .Change_Profile_Button {
+  opacity:1;
+}
+
+.Character_Details {
+  width: 60%;
+  height: auto;
+  background-color: rgb(0, 44, 73);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  bottom: 20px;
+  box-shadow: 0px 8px 15px rgb(0 0 0 / 30%);
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.WantedColor {
+  height: 5px;
+  width: 120%;
+}
+
+.Character_Info_Row {
+  flex-basis: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  font-size: 1.2vw;
+  margin-top: 10px;
+}
+
+.Mdt_Select {
+  background-color: rgb(0, 16, 36);
+  border: none;
+}
+
+.MDT_List {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.List_Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 15px;
+  background-color: rgb(0, 53, 88);
+  margin-top: 8px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 15px rgb(0 0 0 / 30%);
+  transition: 250ms;
+}
+
+.List_Row_Wanted {
+  border-left: 9px solid rgb(255, 47, 47);;
+}
+
+.List_Row:hover {
+  padding: 20px;
+  background-color: rgb(45, 64, 77);
+  transition: 250ms;
+}
+
+.List_Row p {
+  margin: 0 0 0 0;
+  font-size: 1.2vw;
+}
+
+
+
+#Page_CarDetailInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.Data_List {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  background-color: rgb(0, 53, 88);
+  border-radius: 6px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Data_List_Content {
+  padding: 10px;
+}
+
+.data_Row {
+  margin-top: 3px;
+  width: 67%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Data_Delete_Button {
+  position: relative;
+  right: 20px;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: rgb(204, 44, 44);
+  padding: 3px 3px 3px 3px;
+  color: rgb(204, 44, 44);
+  background: none;
+  transition: 500ms;
+}
+
+.Data_Delete_Button:hover {
+  padding: 5px 5px 5px 5px;
+  transition: 500ms;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: rgb(0, 53, 88);
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: none;
+  width: 80%; /* Could be more or less, depending on screen size */
+  height: 50%;
+}
+
+.modal-content input {
+  padding: 5px;
+  width: 30%;
+  background: none;
+  border-color: blanchedalmond;
+  border-width: 1px;
+  outline: none;
+  font-size: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.322);
+  width: 80%;
+}
+
+.DiscardButton {
+  padding: 10px;
+  width: 80px;
+  background: none;
+  border-color: rgb(230, 52, 52);
+  border-radius: 10px;
+  font-size: 15px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.322);
+  transition: 500ms;
+}
+
+.DiscardButton:hover {
+  background: rgb(230, 52, 52);
+  color: rgb(255, 255, 255);
+  transition: 500ms;
+}
+
+
+
+/* Fonts */
+
+.font-Secular {
+  font-family: 'Secular One', sans-serif;
+}
+
+.font-Lalezar {
+  font-family: 'Lalezar', cursive;
+}
+
+.font-Pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+.font-Goch_-hand {
+  font-family: 'Gochi Hand', cursive;
+}
+
+/* Error */
+
+.Input-error {
+  border-color: red;
+}

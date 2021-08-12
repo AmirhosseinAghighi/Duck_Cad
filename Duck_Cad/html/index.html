@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck Phone</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- bootstrap and compiled js -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+    <script src="./app.js"></script>
+</head>
+    <body style="background: none;">
+        <div class="tablet" style="display: none;">
+
+          <div class="Loading" id="LoadingPage">
+            <img src="img/Loading.gif">
+          </div>
+
+            <div class="Login" id="LoginPage">
+              <img style="border-radius: 100%; width: 100%; height: 100%;" src="img/logo.png">
+              <h1>Duck CAD</h1>
+              <button onclick="DuckMdt.Login()">Login</button>
+            </div>
+
+            <div class="MainPage" id="MainPage">
+              <div class="Header">
+                <img style="border-radius: 100%;"src="img/logo.png">
+                <h2>Duck CAD</h2>
+                <button class="ExitButton" onclick="ExitTablet()">Exit</button>
+              </div>
+
+              <div class="MainPageContent"></div>
+                <div class="MainPageTabs">
+                    <div class="MainPageUserInfo">
+                        <span>●</span>
+                        <p id="username_mdt" style="word-wrap: break-word; font-size: 1.3vw;">UserName</p>
+                        <br>
+                        <p style="font-size: 1.5vw; flex-basis: 100%; position: relative; left: 40%; color: blanchedalmond;" id="Rank_mdt">Chief</p>
+                    </div>
+                    <div class="MainPageTabButtons">
+                      <button class="MainPageTabButton MainPageTabActiveButton" id="Page_Button_MainPanel" onclick="DuckMdt.TabSelected('MainPanel')">Main panel</button>
+                      <button class="MainPageTabButton" id="Page_Button_CitizensList" onclick="DuckMdt.TabSelected('CitizensList')">List of citizens</button>
+                      <button class="MainPageTabButton" id="Page_Button_VehiclesList" onclick="DuckMdt.TabSelected('VehiclesList')">List of vehicles</button>
+                      <button class="MainPageTabButton" id="Page_Button_TenCodes" onclick="DuckMdt.TabSelected('TenCodes')">10-codes</button>
+                    </div>
+                </div>
+
+                <div class="MainPageTabContent" id="MainPageTabContent">
+                      <div id="Page_MainPanel">
+                          <p style="font-size: 3vw;">Main panel</p>
+                          <!--  -->
+                          <div class="Main_Panel_Page_Lists">
+
+                            <div class="Main_Panel_Page_WantedPeople">
+                              <p>People Wanted</p>
+                              <div class="Main_Panel_Page_List">
+                                <div class="MDT_List" id="Main_Page_PeopleWanted_List">
+
+                                </div>
+                              </div>
+                            </div>
+                            <!--  -->
+                            <div class="Main_Panel_Page_WnatedCars">
+                              <p>Cars Wanted</p>
+                              <div class="Main_Panel_Page_List">
+                                <div class="Main_Panel_Page_List">
+                                  <div class="MDT_List" style="width: 125%;" id="Main_Page_CarsWanted_List">
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+
+
+                      </div>
+                      
+                      <!-- should change id citizen lists to list and citizen list to specefic id -->
+
+                      <div id="Page_CitizensList" style="display: none;"> 
+                        <div class="MainPage_Header">
+                          <p style="font-size: 2vw;">Citizens List</p>
+                          <input type="text" id="CitizenSearch" placeholder="Search">
+                        </div>
+
+
+                        <div id="Citizens_List_Search_Resualts" class="MDT_List" style="margin-top: 65px;">
+                          <!-- <div class="List_Row">
+                              <p>1</p>
+                              <p style="margin-left: 15px;">IC Name</p>
+                              <p style="margin-left: 50px;">093125452</p>
+                              <p style="margin-left: 120px; color: rgb(255, 47, 47);">Wanted</p>
+                          </div> -->
+
+
+                        </div>
+
+
+
+                        <div>
+
+                        </div>
+                      </div>
+
+
+                      <div id="Page_CitizensDetailInfo" style="display: none;">
+                        <div class="MainPage_Header">
+                          <button class="ExitButton" style="width: 120px;" onclick="DuckMdt.BackToCitzenList()">Back</button>
+                          <p style="font-size: 2vw;" id="CharacterName_P">IC Name</p>
+                        </div>
+                        <div class="Character_Info">
+                          <div class="Profile_Picture">
+                            <img style="height:220px;width:100%;float:left;" id="Character_Profile_Picture" src="https://media.discordapp.net/attachments/852831812908875786/870977312739442708/unknown.png"/>
+                            <button class="Change_Profile_Button" id="Character_Profile_Picture_Button">Set Profile</button>
+                          </div>
+
+                          <div class="Character_Details">
+                            <div class="WantedColor" id="WantedColor_Character" style="background-color: rgb(177, 177, 177);"></div>
+                            <div class="Character_Info_Row">
+                              <p>Gender</p>
+                              <p id="Character_Details_Gender">Man</p>
+                            </div>
+
+                            <div class="Character_Info_Row">
+                              <p>Phone</p>
+                              <p id="Character_Details_Phonenumber">093938545165</p>
+                            </div>
+
+                            <div class="Character_Info_Row">
+                              <p>Bank</p>
+                              <p id="Character_Details_Bank">124</p>
+                            </div>
+
+                            <div class="Character_Info_Row">
+                              <p>Status</p>
+                              <Select class="Mdt_Select" id="Character_Profile_Select_Wanted">
+                                <option value="standard" style="color: white">Standard</option>
+                                <option value="arrested" style="color: rgb(201, 36, 36);">Arrested</option>
+                                <option value="wanted" style="color: rgb(201, 36, 36);">Wanted</option>
+                                <option value="in_prison" style="color: rgb(36, 74, 201);">In prison</option>
+                                <option value="special" style="color: rgb(36, 74, 201);">Special</option>
+                              </Select>
+                            </div>
+
+                                                                          <!--  -->
+
+                                                                          <div id="NewCPorfileUrlModal" class="modal">
+                                                                            <div class="modal-content" style="background-color: rgb(0, 53, 88);">
+                                                                              <span class="close" onclick="CloseCProfileModal()">&times;</span>
+                                                                              <h1>New Profile</h1>
+                                                                              <hr>
+                                                                              <h4>Picture Url</h4>
+                                                                              <input id="NewCPorfileUrl" type="text" placeholder="Url">
+                                                                              <br>
+                                                                              <div style="margin-top: 15px;">
+                                                                                <button class="DiscardButton" style="float: left;" onclick="CloseCProfileModal()">Discard</button><button class="ExitButton" style="float: right;" onclick="SetNewProfilePic()" id="Character_SetNewProfilePic">Save</button>
+                                                                              </div>
+                                                                            </div>
+                                                                          </div>
+                                                
+                                                                        <!--  -->
+
+                          </div>
+                        </div>
+
+                        <div class="MDT_List" style="margin-top: 65px;" id="Character_Profile_Cars_List">
+                          <!-- <div class="List_Row">
+                              <p>1</p>
+                              <p style="margin-left: 90px;">153VHA1</p>
+                              <p style="margin-left: 130px;">Vehicle Model</p>
+                          </div> -->
+
+                        </div>
+
+                        <div class="Data_List">
+                          <div class="Data_List_Content">
+                            <div class="data_Row" style="color: blanchedalmond;">
+                              <p>Id</p>
+                              <p>Author</p>
+                              <p>Date</p>
+                              <p>Reason</p>
+                            </div>
+                          <hr style="color: rgb(49, 49, 49); margin-top: 2px;">
+                            <div id="list_data_citizen">
+                              <div style="width: 100%;">
+                                <div class="data_Row" style="float: left;">
+                                  <p>1</p>
+                                  <p>AmirHossein Aghghi</p>
+                                  <p>2021/3/21</p>
+                                  <p>Rob Shop</p>
+                                </div>
+                                <div style="float: right;">
+                                  <button class="Data_Delete_Button">✖</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <button class="ExitButton" style="margin-top: 15px;" onclick="DataButton()" id="DataButton">Data</button>
+
+                          <div id="myModal" class="modal">
+                            
+                            <div class="modal-content" style="background-color: rgb(0, 53, 88);">
+                              <span class="close" onclick="CloseDataModal()">&times;</span>
+                              <h1>New Data</h1>
+                              <hr>
+                              <h4>Reason</h4>
+                              <input id="NewDataReason" type="text" placeholder="Reason">
+                              <br>
+                              <div style="margin-top: 15px;">
+                                <button class="DiscardButton" style="float: left;" onclick="CloseDataModal()">Discard</button><button class="ExitButton" style="float: right;" onclick="SaveNewData()" id="SaveNewData">Save</button>
+                              </div>
+                            </div>
+                          </div>
+
+                      </div>
+                      <!--  -->
+                      
+                      
+
+                      <div id="Page_VehiclesList" style="display: none;">
+                        <div class="MainPage_Header">
+                          <p style="font-size: 2vw;">Vehicles List</p>
+                          <input type="text" id="VehicleSearch" placeholder="Search">
+                        </div>
+                        
+                          <div id="Cars_List_Search_Resualts" class="MDT_List" style="margin-top: 65px;">
+                            <!-- <div class="List_Row">
+                                <p>1</p>
+                                <p style="margin-left: 15px;">IC Name</p>
+                                <p style="margin-left: 50px;">093125452</p>
+                                <p style="margin-left: 120px; color: rgb(255, 47, 47);">Wanted</p>
+                            </div> -->
+  
+  
+                          </div>
+  
+                      </div>
+
+                      <div id="Page_CarDetailInfo" style="display: none;">
+                        <div class="MainPage_Header">
+                          <button class="ExitButton" style="width: 120px;" onclick="DuckMdt.BackToCarList()">Back</button>
+                          <p style="font-size: 2vw;" id="CarName_P">IC Name</p>
+                        </div>
+                        <div class="Character_Info">
+                          <div class="Profile_Picture">
+                            <img style="height:220px;width:100%;float:left;" id="Car_Profile_Picture" src="https://media.discordapp.net/attachments/506499777907654666/871521281139421214/unknown.png"/>
+                            <button class="Change_Profile_Button" id="Car_Profile_Picture_Button">Set Profile</button>
+                          </div>
+                          <div class="Character_Details">
+                            <div class="WantedColor" id="WantedColor_Car" style="background-color: rgb(177, 177, 177);"></div>
+                            <div class="Character_Info_Row">
+                              <p>Owner</p>
+                              <p id="Car_Details_Owner">Man</p>
+                            </div>
+
+                            <div class="Character_Info_Row">
+                              <p>Owner Phone Number</p>
+                              <p id="Car_Details_Owner_Phone_Number">093938545165</p>
+                            </div>
+
+
+                            <div class="Character_Info_Row">
+                              <p>Status</p>
+                              <Select class="Mdt_Select" id="Car_Profile_Select_Wanted">
+                                <option value="standard" style="color: white">Standard</option>
+                                <option value="arrested" style="color: rgb(201, 36, 36);">Arrested</option>
+                                <option value="wanted" style="color: rgb(201, 36, 36);">Wanted</option>
+                                <option value="in_prison" style="color: rgb(36, 74, 201);">In prison</option>
+                                <option value="special" style="color: rgb(36, 74, 201);">Special</option>
+                              </Select>
+                            </div>
+
+                                                        
+                                              <!--  -->
+
+                                              <div id="NewCarPorfileUrlModal" class="modal">
+                                                <div class="modal-content" style="background-color: rgb(0, 53, 88);">
+                                                  <span class="close" onclick="CloseCProfileModal()">&times;</span>
+                                                  <h1>New Profile</h1>
+                                                  <hr>
+                                                  <h4>Picture Url</h4>
+                                                  <input id="NewCarPorfileUrl" type="text" placeholder="Url">
+                                                  <br>
+                                                  <div style="margin-top: 15px;">
+                                                    <button class="DiscardButton" style="float: left;" onclick="CloseCarProfileModal()">Discard</button><button class="ExitButton" style="float: right;" onclick="Car_SetNewProfilePic()" id="Car_SetNewProfilePic">Save</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                    
+                                            <!--  -->
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <!--  -->
+
+                      <div id="Page_TenCodes" style="display: none;">
+                          <span style="font-size: 1.5vw;">10-3 | Sooot Radio</span><br>
+                      </div>
+
+                </div>
+
+                <!--                             -->
+
+            </div>
+        </div>
+    </body>
+</html>
