@@ -2,6 +2,7 @@
 Fivem Cad Script  
 
 ## Support
+  [![Discord](https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/DW8r7RmM)
   Discord : https://discord.gg/DW8r7RmM   
   you can report your problem as message in our discord support channel
 
