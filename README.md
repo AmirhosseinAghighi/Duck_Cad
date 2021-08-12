@@ -20,7 +20,8 @@ Fivem Cad Script
   1.Download File from reposity.  
   2. Copy ```Duck_Cad``` folder to your resources folder  
   3. add ```start Duck_Cad``` to your server.cfg  
-  4. Enjoy the Script ! 
+  4. run ```Sql.sql``` file in your data base query
+  5. Enjoy the Script ! 
 
 ## Notes !  
   1. Dont Change Resource folder name !
