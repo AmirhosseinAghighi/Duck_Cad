@@ -347,6 +347,7 @@ window.addEventListener('message', function(event) {
             $("#SaveNewData").attr('onclick', 'SaveNewData("' + user['identifier'] + '")')
             let number = 1;
             // console.log(data.cars)
+            $('#Character_Profile_Cars_List').empty() // make list of vehicles empty
             data.cars.forEach(element => {
                 let status = 'Impound'
                 if (element['stored']) {
